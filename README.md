@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+React Hooks Summary
+React hooks allow you to manage state, lifecycle, and side effects in functional components without using class components. Here’s a brief summary of the most commonly used hooks:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. useState() – State Management
+Used for managing local state in a component.
+Example:
+const [count, setCount] = useState(0);
+setCount(count + 1);
 
-## Available Scripts
+2. useEffect() – Side Effects & Lifecycle Management
+Executes code after render (e.g., data fetching, subscriptions).
+Can run on mount, update, or unmount.
+Example:
+useEffect(() => {
+  console.log("Component Mounted!");
+  return () => console.log("Cleanup on Unmount");
+}, []);
 
-In the project directory, you can run:
+3. useContext() – Global State Sharing
+Accesses values from a React Context without passing props manually.
+Example:
+const theme = useContext(ThemeContext);
 
-### `npm start`
+4. useReducer() – Complex State Management
+Alternative to useState, useful for managing state with actions.
+Example:
+const [state, dispatch] = useReducer(reducer, { count: 0 });
+dispatch({ type: "increment" });
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5. useRef() – Direct DOM Access & Persisting Values
+Stores a reference to a DOM element or value that persists across renders.
+Example:
+const inputRef = useRef(null);
+inputRef.current.focus();
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+6. useMemo() – Performance Optimization
+Memoizes an expensive computation to prevent unnecessary recalculations.
+Example:
+const squaredValue = useMemo(() => number * number, [number]);
 
-### `npm test`
+7. useCallback() – Memoizing Functions
+Prevents functions from being recreated on each render.
+Example:
+const memoizedFunction = useCallback(() => console.log("Hello"), []);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+8. useLayoutEffect() – DOM Synchronization
+Similar to useEffect, but runs synchronously after DOM updates.
+Example:
+useLayoutEffect(() => {
+  console.log("DOM Updated!");
+});
 
-### `npm run build`
+9. useImperativeHandle() – Exposing Functions from a Component
+Customizes a component’s instance when using ref.
+Example:
+useImperativeHandle(ref, () => ({
+  focus: () => inputRef.current.focus(),
+}));
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+10. useId() – Unique ID Generation
+Generates unique IDs for elements inside the component.
+Example:
+const id = useId();
+<label htmlFor={id}>Name:</label>
+<input id={id} />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Conclusion 
+useState & useReducer → Manage State
+useEffect & useLayoutEffect → Handle Side Effects
+useContext → Share Global State
+useRef & useImperativeHandle → Access DOM
+useMemo & useCallback → Optimize Performance
+useId → Generate Unique Identifiers
