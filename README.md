@@ -1,5 +1,5 @@
-React Hooks Summary
-React hooks allow you to manage state, lifecycle, and side effects in functional components without using class components. Here’s a brief summary of the most commonly used hooks:
+React Hooks Summary <br>
+React hooks allow you to manage state, lifecycle, and side effects in functional components without using class components. Here’s a brief summary of the most commonly used hooks: <br>
 
 1. useState() – State Management
 Used for managing local state in a component.
