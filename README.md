@@ -64,7 +64,7 @@ const id = useId();
 <label htmlFor={id}>Name:</label>
 <input id={id} />
 
-Conclusion 
+<h3>Conclusion</h3> <br>
 useState & useReducer → Manage State <br>
 useEffect & useLayoutEffect → Handle Side Effects <br>
 useContext → Share Global State <br>
