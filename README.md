@@ -65,9 +65,9 @@ const id = useId();
 <input id={id} />
 
 Conclusion 
-useState & useReducer → Manage State
-useEffect & useLayoutEffect → Handle Side Effects
-useContext → Share Global State
-useRef & useImperativeHandle → Access DOM
-useMemo & useCallback → Optimize Performance
-useId → Generate Unique Identifiers
+useState & useReducer → Manage State <br>
+useEffect & useLayoutEffect → Handle Side Effects <br>
+useContext → Share Global State <br>
+useRef & useImperativeHandle → Access DOM <br>
+useMemo & useCallback → Optimize Performance <br>
+useId → Generate Unique Identifiers <br>
